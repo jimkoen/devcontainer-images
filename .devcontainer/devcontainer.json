@@ -1,0 +1,22 @@
+// From https://github.com/devcontainers/images/blob/07cdbd77bc9e7f446cc346df7957361d0647cad5/.devcontainer/devcontainer.json
+// todo: figure out if we need a copyright notice here (see link above)
+// this has to be :16-buster, the build will fail on jessy
+{   
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:18-buster", 
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker": {
+            "version": "latest",
+            "moby": true
+        }
+    },
+    "postCreateCommand": "npm install -g @devcontainers/cli"
+}
+
